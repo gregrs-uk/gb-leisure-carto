@@ -1,0 +1,277 @@
+{
+  "bounds": [
+    -9.3195,
+    49.4596,
+    2.4578,
+    61.1157
+  ],
+  "center": [
+    -2.5068,
+    52.1908,
+    14
+  ],
+  "format": "png8",
+  "interactivity": false,
+  "minzoom": 14,
+  "maxzoom": 15,
+  "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over",
+  "Stylesheet": [
+    "style.mss"
+  ],
+  "Layer": [
+    {
+      "geometry": "polygon",
+      "extent": [
+        -2.6137143,
+        53.6169946,
+        -0.2123533,
+        54.7119327
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural = 'woodland' or\nlanduse = 'forest'\n)\nas woodland",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6137143,53.6169946,-0.2123533,54.7119327",
+        "dbname": "herefordshire"
+      },
+      "id": "woodland",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "woodland"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.6574331,
+        51.34094540000001,
+        8.377767,
+        57.753563500000006
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect *\nfrom planet_osm_line\nwhere waterway = 'river' or waterway = 'stream' or\nwaterway = 'canal' or waterway = 'drain' or waterway = 'ditch'\n)\nas waterways",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "dbname": "herefordshire"
+      },
+      "id": "waterways",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "waterways"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -2.6137143,
+        53.6169946,
+        -0.2123533,
+        54.7119327
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, planet_osm_polygon.natural, waterway\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural = 'water' or\nwaterway = 'water'\n)\nas water",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6137143,53.6169946,-0.2123533,54.7119327",
+        "dbname": "herefordshire",
+        "id": "water",
+        "project": "gb-leisure",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "water",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "water"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.6574331,
+        51.34094540000001,
+        8.377767,
+        57.753563500000006
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, barrier\nfrom planet_osm_line\nwhere barrier = 'fence' or barrier = 'hedge'\nor barrier = 'wall'\n)\nas boundaries",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "dbname": "herefordshire"
+      },
+      "id": "boundaries",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "boundaries"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.6574331,
+        51.34094540000001,
+        8.377767,
+        57.753563500000006
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway = 'motorway' or highway = 'motorway_link' or\nhighway = 'trunk' or highway = 'trunk_link' or\nhighway = 'primary' or highway = 'primary_link' or\nhighway = 'secondary' or highway = 'secondary_link' or\nhighway = 'tertiary' or highway = 'tertiary_link' or\nhighway = 'unclassified' or highway = 'residential' or\nhighway = 'track'\norder by z_order\n)\nas highway",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "dbname": "herefordshire",
+        "id": "roads",
+        "project": "gb-leisure",
+        "srs": "+init=epsg:4326"
+      },
+      "id": "roads",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "roads"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.6574331,
+        51.34094540000001,
+        8.377767,
+        57.753563500000006
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, railway\nfrom planet_osm_line\nwhere railway = 'rail'\n)\nas railway",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "dbname": "herefordshire"
+      },
+      "id": "railway",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "railway"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.6574331,
+        51.34094540000001,
+        8.377767,
+        57.753563500000006
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, highway, designation, foot, access\nfrom planet_osm_line\nwhere highway = 'footway' or highway = 'bridleway' or\nhighway = 'cycleway' or highway = 'path' or\ndesignation = 'public_footpath' or designation = 'public_bridleway' or\ndesignation = 'restricted_byway' or designation = 'byway_open_to_all_traffic'\n)\nas rightsofway",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "dbname": "herefordshire",
+        "id": "paths",
+        "project": "gb-leisure",
+        "srs": "+init=epsg:4326"
+      },
+      "id": "paths",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "paths"
+    },
+    {
+      "geometry": "linestring",
+      "extent": [
+        -2.585976822676941,
+        52.14682951134574,
+        -2.4407307214808047,
+        52.23736662661617
+      ],
+      "id": "contours",
+      "class": "",
+      "Datasource": {
+        "file": "/home/greg/Documents/openstreetmap/data/so-contours/SO65_line.shp",
+        "type": "shape"
+      },
+      "layer": null,
+      "srs-name": "custom",
+      "srs": "+init=epsg:27700",
+      "advanced": {},
+      "name": "contours"
+    },
+    {
+      "geometry": "point",
+      "extent": [
+        -2.5870442,
+        51.34094540000001,
+        3.1897014,
+        54.8068903
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, place, name\nfrom planet_osm_point\nwhere place = 'city' or place = 'town' or\nplace = 'suburb' or place = 'neighbourhood' or\nplace = 'village' or place = 'hamlet' or\nplace = 'isolated_dwelling' or place = 'farm' or\nplace = 'locality' or\nplace = 'island' or place = 'islet'\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place = 'island' or place = 'islet' then 60\nwhen place = 'village' or place = 'hamlet' then 50\nwhen place = 'locality' then 40\nwhen place = 'isolated_dwelling' or place = 'farm' then 30\nend\n)\nas places",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-2.5870442,51.3409454,3.1897014,54.8068903",
+        "dbname": "herefordshire",
+        "id": "labels",
+        "project": "gb-leisure",
+        "srs": "+init=epsg:4326"
+      },
+      "id": "labels",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "labels"
+    },
+    {
+      "geometry": "polygon",
+      "extent": [
+        -7.55715989372837,
+        49.76680722270928,
+        2.7814598620646507,
+        60.822590112656144
+      ],
+      "id": "grid",
+      "class": "",
+      "Datasource": {
+        "file": "/home/greg/Documents/openstreetmap/data/OSGB_Grids/Shapefile/OSGB_Grid_1km.shp",
+        "id": "grid",
+        "project": "gb-leisure",
+        "srs": "",
+        "type": "shape"
+      },
+      "layer": null,
+      "srs-name": "custom",
+      "srs": "+init=epsg:27700",
+      "advanced": {
+        "type": "shape"
+      },
+      "name": "grid"
+    }
+  ],
+  "scale": 1,
+  "metatile": 2,
+  "name": "GB Leisure",
+  "description": "",
+  "attribution": ""
+}
