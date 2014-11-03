@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# https://github.com/gregrs-uk/gb-leisure-carto/
+
 # Script to output an OSGB map using a
 # given paper size, scale and origin
 

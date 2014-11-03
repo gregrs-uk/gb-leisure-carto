@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# https://github.com/gregrs-uk/gb-leisure-carto/
+
 if [ -f gb-leisure.xml ]
 then
 mv gb-leisure.xml gb-leisure-old.xml

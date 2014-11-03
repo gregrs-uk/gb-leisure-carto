@@ -1,3 +1,5 @@
+// https://github.com/gregrs-uk/gb-leisure-carto/
+
 Map {
   background-color: white;
 }

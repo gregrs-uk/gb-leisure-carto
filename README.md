@@ -12,4 +12,4 @@ Files
 
 Licence
 -------
-Files in this repository are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. Please see http://creativecommons.org/licenses/by-nc-sa/4.0/
+Feel free to use this code in your own projects (see LICENCE file for details) but please provide attribution and (where possible) a link to https://github.com/gregrs-uk/gb-leisure-carto/ in your code and alongside any map renders.
