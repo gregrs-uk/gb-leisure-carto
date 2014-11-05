@@ -22,26 +22,29 @@
     {
       "geometry": "polygon",
       "extent": [
-        -2.6137143,
-        53.6169946,
-        -0.2123533,
-        54.7119327
+        -3.1318318,
+        51.792036,
+        -2.2744444,
+        52.405986
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural = 'woodland' or\nlanduse = 'forest'\n)\nas woodland",
+        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural = 'woodland' or\nplanet_osm_polygon.natural = 'wood' or\nlanduse = 'forest' or landuse = 'residential' or\nlanduse = 'industrial' or landuse = 'retail' or\nlanduse = 'commercial' or landuse = 'farmyard'\n)\nas landuse",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
-        "extent": "-2.6137143,53.6169946,-0.2123533,54.7119327",
-        "dbname": "herefordshire"
+        "extent": "-3.1318318,51.792036,-2.2744444,52.405986",
+        "dbname": "herefordshire",
+        "id": "landuse",
+        "project": "gb-leisure",
+        "srs": "+init=epsg:4326"
       },
-      "id": "woodland",
+      "id": "landuse",
       "class": "",
       "srs-name": "custom",
       "srs": "+init=epsg:4326",
       "advanced": {},
-      "name": "woodland"
+      "name": "landuse"
     },
     {
       "geometry": "linestring",

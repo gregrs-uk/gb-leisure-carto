@@ -4,9 +4,17 @@ Map {
   background-color: white;
 }
 
-#woodland {
-  // natural=woodland and landuse=forest
-  polygon-fill:#cfc;
+#landuse {
+  [natural='woodland'], 
+  [natural='wood'],
+  [landuse='forest'] {
+    polygon-fill:#cfc;
+  }
+  [landuse='residential'], [landuse='industrial'],
+  [landuse='retail'], [landuse='commercial'],
+  [landuse='farmyard'] {
+    polygon-fill:#f0f0f0;
+  }
 }
 
 #water {
