@@ -203,6 +203,9 @@ Map {
   [amenity='pub'] {
     text-name:"'Pub'"
   }
+  [landuse='farmyard'], [place='farm'] {
+    text-dy: -13;
+  }
 }
 
 #grid {
