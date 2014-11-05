@@ -170,6 +170,33 @@
       "name": "railway"
     },
     {
+      "geometry": "polygon",
+      "extent": [
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
+      ],
+      "Datasource": {
+        "type": "postgis",
+        "table": "(\nselect way, building, amenity\nfrom planet_osm_polygon\nwhere building != 'no'\n)\nas buildings",
+        "key_field": "",
+        "geometry_field": "",
+        "extent_cache": "auto",
+        "extent": "-3.2290317,51.799255,-2.2551373,52.4054663",
+        "dbname": "herefordshire",
+        "id": "buildings",
+        "project": "gb-leisure",
+        "srs": "+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0.0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs +over"
+      },
+      "id": "buildings",
+      "class": "",
+      "srs-name": "custom",
+      "srs": "+init=epsg:4326",
+      "advanced": {},
+      "name": "buildings"
+    },
+    {
       "geometry": "linestring",
       "extent": [
         -2.6574331,

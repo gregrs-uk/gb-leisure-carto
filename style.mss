@@ -116,6 +116,10 @@ Map {
   line-join:bevel;
 }
 
+#buildings {
+  polygon-fill:#eb6;
+}
+
 #paths {
   // from db: highway=footway/bridleway/cycleway
   // or anything with designation tag set
