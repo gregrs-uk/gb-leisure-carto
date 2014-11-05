@@ -61,15 +61,15 @@ Map {
     [highway='trunk'],[highway='trunk_link'],
     [highway='primary'],[highway='primary_link'] {
       line-width:@primary_width+@outer_width;
-      line-color:#700;
+      line-color:#922;
     }
     [highway='secondary'],[highway='secondary_link'] {
       line-width:@secondary_width+@outer_width;
-      line-color:#910;
+      line-color:#960;
     }
     [highway='tertiary'],[highway='tertiary_link'] {
       line-width:@secondary_width+@outer_width;
-      line-color:#aa0;
+      line-color:#990;
     }
     [highway='unclassified'],[highway='residential'] {
       line-width:@minor_width+@outer_width;
@@ -100,11 +100,11 @@ Map {
     [highway='trunk'],[highway='trunk_link'],
     [highway='primary'],[highway='primary_link'] {
       line-width:@primary_width;
-      line-color:#f99;
+      line-color:#fbf;
     }
     [highway='secondary'],[highway='secondary_link'] {
       line-width:@secondary_width;
-      line-color:#fb4;
+      line-color:#fc5;
     }
     [highway='tertiary'],[highway='tertiary_link'] {
       line-width:@secondary_width;
