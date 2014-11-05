@@ -194,6 +194,15 @@ Map {
   [place='island'] {
     text-size:14pt;
   }
+  [amenity='school'] {
+    text-name:"'Sch'"
+  }
+  [amenity='place_of_worship'][religion='christian'] {
+    text-name:"'Ch'"
+  }
+  [amenity='pub'] {
+    text-name:"'Pub'"
+  }
 }
 
 #grid {
