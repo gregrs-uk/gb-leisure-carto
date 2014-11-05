@@ -140,7 +140,7 @@ Map {
   [foot='designated'],[access='designated'],
   [foot='permissive'],[access='permissive'],
   [foot='yes'],[access='yes'] {
-    line-color: green;
+    line-color: #0a0;
   }
   // override colour if designation is explicitly set
   [designation='public_footpath'] {
