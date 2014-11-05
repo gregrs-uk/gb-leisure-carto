@@ -65,7 +65,7 @@ Map {
     }
     [highway='unclassified'],[highway='residential'] {
       line-width:@minor_width+@outer_width;
-      line-color:#555;
+      line-color:#333;
     }
     [highway='service'],
     [highway='track'][tracktype='grade1'],
@@ -155,7 +155,7 @@ Map {
 #contours {
   line-width:0.5;
   line-color:#f0f;
-  line-opacity:0.7;
+  line-opacity:0.8;
   line-cap:butt;
   line-dasharray:1,1;
 }
@@ -169,14 +169,14 @@ Map {
   text-fill: black; //#777;
   text-opacity:0.3;
   [place='city'] {
-    text-size:48pt;
+    text-size:35pt;
   }
   [place='town'] {
-    text-size:40pt;
+    text-size:28pt;
   }
   [place='suburb'],[place='neighbourhood']
   {
-    text-size:24pt;
+    text-size:21pt;
   }
   [place='village'],[place='hamlet'],
   [place='island'] {
