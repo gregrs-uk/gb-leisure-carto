@@ -32,8 +32,8 @@
         "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural in ('woodland','wood') or\nlanduse in ('forest','residential','industrial','retail','commercial','farmyard')\n)\nas landuse",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-3.1318318,51.792036,-2.2744444,52.405986",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire",
         "id": "landuse",
         "project": "gb-leisure",
@@ -49,18 +49,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        -2.6574331,
-        51.34094540000001,
-        8.377767,
-        57.753563500000006
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect *\nfrom planet_osm_line\nwhere waterway in ('river','stream','canal','drain','ditch')\n)\nas waterways",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire"
       },
       "id": "waterways",
@@ -73,18 +73,18 @@
     {
       "geometry": "polygon",
       "extent": [
-        -2.6137143,
-        53.6169946,
-        -0.2123533,
-        54.7119327
+        -3.1318318,
+        51.792036,
+        -2.2744444,
+        52.405986
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect way, planet_osm_polygon.natural, waterway\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural = 'water' or\nwaterway = 'water'\n)\nas water",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.6137143,53.6169946,-0.2123533,54.7119327",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire",
         "id": "water",
         "project": "gb-leisure",
@@ -100,18 +100,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        -2.6574331,
-        51.34094540000001,
-        8.377767,
-        57.753563500000006
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect way, barrier\nfrom planet_osm_line\nwhere barrier in ('fence','hedge','wall')\n)\nas boundaries",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire"
       },
       "id": "boundaries",
@@ -124,18 +124,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        -2.6574331,
-        51.34094540000001,
-        8.377767,
-        57.753563500000006
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway in ('motorway','motorway_link',\n'trunk','trunk_link','primary','primary_link',\n'secondary','secondary_link','tertiary','tertiary_link',\n'unclassified','residential','track')\norder by z_order\n)\nas highway",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire",
         "id": "roads",
         "project": "gb-leisure",
@@ -151,18 +151,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        -2.6574331,
-        51.34094540000001,
-        8.377767,
-        57.753563500000006
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect way, railway\nfrom planet_osm_line\nwhere railway = 'rail'\n)\nas railway",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire"
       },
       "id": "railway",
@@ -175,18 +175,18 @@
     {
       "geometry": "polygon",
       "extent": [
-        -3.2290317,
-        51.799255,
-        -2.2551373,
-        52.4054663
+        -3.1318318,
+        51.792036,
+        -2.2744444,
+        52.405986
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect way, building, amenity\nfrom planet_osm_polygon\nwhere building != 'no'\n)\nas buildings",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-3.2290317,51.799255,-2.2551373,52.4054663",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire",
         "id": "buildings",
         "project": "gb-leisure",
@@ -202,18 +202,18 @@
     {
       "geometry": "linestring",
       "extent": [
-        -2.6574331,
-        51.34094540000001,
-        8.377767,
-        57.753563500000006
+        -3.2290317,
+        51.799255,
+        -2.2551373,
+        52.4054663
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\nselect way, highway, designation, foot, access\nfrom planet_osm_line\nwhere highway in ('footway','bridleway','cycleway','path') or\ndesignation in ('public_footpath','public_bridleway',\n'restricted_byway','byway_open_to_all_traffic')\n)\nas rightsofway",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.6574331,51.3409454,8.377767,57.7535635",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire",
         "id": "paths",
         "project": "gb-leisure",
@@ -249,18 +249,18 @@
     {
       "geometry": "point",
       "extent": [
-        -2.5870442,
-        51.34094540000001,
-        3.1897014,
-        54.8068903
+        -3.1318318,
+        51.792036,
+        -2.2744444,
+        52.405986
       ],
       "Datasource": {
         "type": "postgis",
         "table": "(\n(select way, place, landuse, amenity, religion, name\nfrom planet_osm_point\nwhere place in ('city','town','suburb','neighbourhood','village','hamlet',\n'isolated_dwelling','farm','island','islet','locality') or\nlanduse = 'farmyard' or\namenity in ('school','pub') or\n(amenity = 'place_of_worship' and religion='christian')\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place in ('island','islet') then 60\nwhen place in ('village','hamlet') then 50\nwhen place = 'locality' then 40\nwhen amenity = 'place_of_worship' then 30\nwhen amenity = 'pub' then 20\nwhen place = 'school' then 10\nwhen place in ('isolated_dwelling','farm') or landuse='farmyard' then 0\nend)\nunion\n(select way, place, landuse, amenity, religion, name\nfrom planet_osm_polygon\nwhere place in ('city','town','suburb','neighbourhood','village','hamlet',\n'isolated_dwelling','farm','island','islet','locality') or\nlanduse = 'farmyard' or\namenity in ('school','pub') or\n(amenity = 'place_of_worship' and religion='christian')\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place in ('island','islet') then 60\nwhen place in ('village','hamlet') then 50\nwhen place = 'locality' then 40\nwhen amenity = 'place_of_worship' then 30\nwhen amenity = 'pub' then 20\nwhen place = 'school' then 10\nwhen place in ('isolated_dwelling','farm') or landuse='farmyard' then 0\nend)\n)\nas labels",
         "key_field": "",
         "geometry_field": "",
-        "extent_cache": "auto",
-        "extent": "-2.5870442,51.3409454,3.1897014,54.8068903",
+        "extent_cache": "dynamic",
+        "extent": "",
         "dbname": "herefordshire",
         "id": "labels",
         "project": "gb-leisure",
