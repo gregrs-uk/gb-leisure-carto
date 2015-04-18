@@ -131,7 +131,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway in ('motorway','motorway_link',\n'trunk','trunk_link','primary','primary_link',\n'secondary','secondary_link','tertiary','tertiary_link',\n'unclassified','residential','track')\norder by z_order\n)\nas highway",
+        "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway in ('motorway','motorway_link',\n'trunk','trunk_link','primary','primary_link',\n'secondary','secondary_link','tertiary','tertiary_link',\n'unclassified','residential','service','track')\norder by z_order\n)\nas highway",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "dynamic",
