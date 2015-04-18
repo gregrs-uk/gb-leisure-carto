@@ -29,7 +29,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural = 'woodland' or\nplanet_osm_polygon.natural = 'wood' or\nlanduse = 'forest' or landuse = 'residential' or\nlanduse = 'industrial' or landuse = 'retail' or\nlanduse = 'commercial' or landuse = 'farmyard'\n)\nas landuse",
+        "table": "(\nselect way, planet_osm_polygon.natural, landuse\nfrom planet_osm_polygon\nwhere planet_osm_polygon.natural in ('woodland','wood') or\nlanduse in ('forest','residential','industrial','retail','commercial','farmyard')\n)\nas landuse",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
@@ -56,7 +56,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect *\nfrom planet_osm_line\nwhere waterway = 'river' or waterway = 'stream' or\nwaterway = 'canal' or waterway = 'drain' or waterway = 'ditch'\n)\nas waterways",
+        "table": "(\nselect *\nfrom planet_osm_line\nwhere waterway in ('river','stream','canal','drain','ditch')\n)\nas waterways",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
@@ -107,7 +107,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, barrier\nfrom planet_osm_line\nwhere barrier = 'fence' or barrier = 'hedge'\nor barrier = 'wall'\n)\nas boundaries",
+        "table": "(\nselect way, barrier\nfrom planet_osm_line\nwhere barrier in ('fence','hedge','wall')\n)\nas boundaries",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
@@ -131,7 +131,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway = 'motorway' or highway = 'motorway_link' or\nhighway = 'trunk' or highway = 'trunk_link' or\nhighway = 'primary' or highway = 'primary_link' or\nhighway = 'secondary' or highway = 'secondary_link' or\nhighway = 'tertiary' or highway = 'tertiary_link' or\nhighway = 'unclassified' or highway = 'residential' or\nhighway = 'track'\norder by z_order\n)\nas highway",
+        "table": "(\nselect way, highway, tracktype, z_order\nfrom planet_osm_line\nwhere highway in ('motorway','motorway_link',\n'trunk','trunk_link','primary','primary_link',\n'secondary','secondary_link','tertiary','tertiary_link',\n'unclassified','residential','track')\norder by z_order\n)\nas highway",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
@@ -209,7 +209,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\nselect way, highway, designation, foot, access\nfrom planet_osm_line\nwhere highway = 'footway' or highway = 'bridleway' or\nhighway = 'cycleway' or highway = 'path' or\ndesignation = 'public_footpath' or designation = 'public_bridleway' or\ndesignation = 'restricted_byway' or designation = 'byway_open_to_all_traffic'\n)\nas rightsofway",
+        "table": "(\nselect way, highway, designation, foot, access\nfrom planet_osm_line\nwhere highway in ('footway','bridleway','cycleway','path') or\ndesignation in ('public_footpath','public_bridleway',\n'restricted_byway','byway_open_to_all_traffic')\n)\nas rightsofway",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
@@ -256,7 +256,7 @@
       ],
       "Datasource": {
         "type": "postgis",
-        "table": "(\n(select way, place, landuse, amenity, religion, name\nfrom planet_osm_point\nwhere place = 'city' or place = 'town' or\nplace = 'suburb' or place = 'neighbourhood' or\nplace = 'village' or place = 'hamlet' or\nplace = 'isolated_dwelling' or place = 'farm' or\nlanduse = 'farmyard' or place = 'locality' or\nplace = 'island' or place = 'islet' or\namenity = 'school' or amenity = 'pub' or\n(amenity = 'place_of_worship' and religion='christian')\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place = 'island' or place = 'islet' then 60\nwhen place = 'village' or place = 'hamlet' then 50\nwhen place = 'locality' then 40\nwhen amenity = 'place_of_worship' then 30\nwhen amenity = 'pub' then 20\nwhen place = 'school' then 10\nwhen place = 'isolated_dwelling' or\nplace = 'farm' or landuse='farmyard' then 0\nend)\nunion\n(select way, place, landuse, amenity, religion, name\nfrom planet_osm_polygon\nwhere place = 'city' or place = 'town' or\nplace = 'suburb' or place = 'neighbourhood' or\nplace = 'village' or place = 'hamlet' or\nplace = 'isolated_dwelling' or place = 'farm' or\nlanduse = 'farmyard' or place = 'locality' or\nplace = 'island' or place = 'islet' or\namenity = 'school' or amenity = 'pub' or\n(amenity = 'place_of_worship' and religion='christian')\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place = 'island' or place = 'islet' then 60\nwhen place = 'village' or place = 'hamlet' then 50\nwhen place = 'locality' then 40\nwhen amenity = 'place_of_worship' then 30\nwhen amenity = 'pub' then 20\nwhen place = 'school' then 10\nwhen place = 'isolated_dwelling' or\nplace = 'farm' or landuse='farmyard' then 0\nend)\n)\nas labels",
+        "table": "(\n(select way, place, landuse, amenity, religion, name\nfrom planet_osm_point\nwhere place in ('city','town','suburb','neighbourhood','village','hamlet',\n'isolated_dwelling','farm','island','islet','locality') or\nlanduse = 'farmyard' or\namenity in ('school','pub') or\n(amenity = 'place_of_worship' and religion='christian')\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place in ('island','islet') then 60\nwhen place in ('village','hamlet') then 50\nwhen place = 'locality' then 40\nwhen amenity = 'place_of_worship' then 30\nwhen amenity = 'pub' then 20\nwhen place = 'school' then 10\nwhen place in ('isolated_dwelling','farm') or landuse='farmyard' then 0\nend)\nunion\n(select way, place, landuse, amenity, religion, name\nfrom planet_osm_polygon\nwhere place in ('city','town','suburb','neighbourhood','village','hamlet',\n'isolated_dwelling','farm','island','islet','locality') or\nlanduse = 'farmyard' or\namenity in ('school','pub') or\n(amenity = 'place_of_worship' and religion='christian')\norder by case\nwhen place = 'city' then 100\nwhen place = 'town' then 90\nwhen place = 'suburb' then 80\nwhen place = 'neighbourhood' then 70\nwhen place in ('island','islet') then 60\nwhen place in ('village','hamlet') then 50\nwhen place = 'locality' then 40\nwhen amenity = 'place_of_worship' then 30\nwhen amenity = 'pub' then 20\nwhen place = 'school' then 10\nwhen place in ('isolated_dwelling','farm') or landuse='farmyard' then 0\nend)\n)\nas labels",
         "key_field": "",
         "geometry_field": "",
         "extent_cache": "auto",
