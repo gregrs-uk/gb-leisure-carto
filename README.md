@@ -28,7 +28,7 @@ Basic usage is as follows:
 - Download the files from this repository
 - Download/extract the [OSGB 1km grid shapefile](https://github.com/charlesroper/OSGB_Grids) and [Terrain 50 contour shapefiles](http://www.ordnancesurvey.co.uk/business-and-government/products/terrain-50.html)
 - Download some [OpenStreetMap data](http://download.geofabrik.de/europe/great-britain.html) and load it into PostGIS using osm2pgsql. You may need to modify the osm2pgsql style file to include the designation tag (used for proper rendering of public rights of way)
-- Edit the project.mml file to provide the correct database name (default 'herefordshire') and paths for the files you downloaded
+- Edit the project.mml file to provide the correct database name (default 'gis') and paths for the files you downloaded
 - Set options in the generate-xml.sh script and run it to convert the CartoCSS files into a Mapnik XML file
 - Set options in the print-osgb.py script and run it to create a PNG image
 
